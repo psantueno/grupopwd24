@@ -25,6 +25,10 @@ form, .contenido{
     background-color: beige;
 }
 
+form{
+    width: 400px;
+}
+
 .contenido{
     justify-content: center;
     align-items: center;
@@ -37,6 +41,12 @@ form, .contenido{
 }
 label{
     margin-bottom: 5px;
+}
+
+.labelError{
+    font-size: 13px;
+    color: red;
+    display: none;
 }
 
 input[type="submit"]{
