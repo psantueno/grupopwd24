@@ -2,6 +2,9 @@ document.addEventListener("submit", e=>{
     let nombre;
     let apellido;
     let direccion;
+    let nombreError;
+    let apellidoError;
+    let direccionError;
     let valido=true;
     nombre=document.getElementById("nombre");
     apellido=document.getElementById("apellido");
@@ -10,8 +13,12 @@ document.addEventListener("submit", e=>{
         if(nombre.classList.contains("invalido")){
             nombre.classList.remove("invalido");
         }
+        nombreError=document.getElementById("nombreError");
+        nombreError.style.display="none";
     }else{
         nombre.classList.add("invalido");
+        nombreError=document.getElementById("nombreError");
+        nombreError.style.display="block";
         valido=false; 
     }
 
@@ -19,8 +26,12 @@ document.addEventListener("submit", e=>{
         if(apellido.classList.contains("invalido")){
             apellido.classList.remove("invalido");
         }
+        apellidoError=document.getElementById("apellidoError");
+        apellidoError.style.display="none";
     }else{
         apellido.classList.add("invalido");
+        apellidoError=document.getElementById("apellidoError");
+        apellidoError.style.display="block";
         valido=false; 
     }
 
@@ -28,8 +39,12 @@ document.addEventListener("submit", e=>{
         if(direccion.classList.contains("invalido")){
             direccion.classList.remove("invalido");
         }
+        direccionError=document.getElementById("direccionError");
+        direccionError.style.display="none";
     }else{
         direccion.classList.add("invalido");
+        direccionError=document.getElementById("direccionError");
+        direccionError.style.display="block";
         valido=false; 
     }
     if(!valido){
@@ -38,33 +53,13 @@ document.addEventListener("submit", e=>{
 })
 
 function soloCaracteres(unaCadena){
-    let valido=true;
-    let i=0;
-    let cadenaAux=unaCadena.toLowerCase();
-    let longitud=cadenaAux.length;
-    let caracterActual;
-    while(i<longitud && valido){
-        caracterActual=cadenaAux.charCodeAt(i);
-        if(((caracterActual<97 || caracterActual>122) && caracterActual!=32) || (caracterActual==32 && i<longitud-1 && cadenaAux.charCodeAt(i+1)==32)){ //Verificacion para que solo se acepten letras y no se ingresen varios espacios consecutivos
-            valido=false;
-        }
-        i++;
-    }
+    let reg=/^(?!.*\s\s)[a-zA-Z\s]+$/;  //Expresion regular que ppermite letras y espacios, pero no pueden haber espacios consecutivos en la cadena
+    let valido=reg.test(unaCadena);
     return valido;
 }
 
 function direccionValida(unaCadena){
-    let valido=true;
-    let i=0;
-    let cadenaAux=unaCadena.toLowerCase();
-    let longitud=cadenaAux.length;
-    let caracterActual;
-    while(i<longitud && valido){
-        caracterActual=cadenaAux.charCodeAt(i);
-        if(((caracterActual<48 || caracterActual<97 && caracterActual>57 || caracterActual>122) && caracterActual!=32) || (caracterActual==32 && i<longitud-1 && cadenaAux.charCodeAt(i+1)==32)){ //Verificacion para que se acepten letras, numeros y no se ingresen varios espacios consecutivos
-            valido=false;
-        }
-        i++;
-    }
+    let reg=/^(?!.*\s\s)(?!.*\.\.)[a-zA-Z0-9.\s]+$/; //Expresion regular que permite letras,numeros y espacios, pero no pueden haber espacios o puntos consecutivos en la cadena
+    let valido=reg.test(unaCadena);
     return valido;
 }

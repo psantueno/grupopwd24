@@ -7,10 +7,10 @@
 
         //Propios
         public function obtenerSaludo($data){
-            $nombre=$data['nombre'];
-            $apellido=$data['apellido'];
+            $nombre=trim($data['nombre']);
+            $apellido=trim($data['apellido']);
             $edad=$data['edad'];
-            $direccion=$data['direccion'];
+            $direccion=trim($data['direccion']);
             $mensaje= "Hola soy $apellido, $nombre tengo $edad años y vivo en $direccion";
             return $mensaje;
         }
