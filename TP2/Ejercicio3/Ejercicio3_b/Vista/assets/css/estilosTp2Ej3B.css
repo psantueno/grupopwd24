@@ -1,0 +1,10 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+label.error{
+    font-size: 13px;
+    color: red;
+    position: relative;
+    top: -15px;
+}
