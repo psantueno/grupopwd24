@@ -12,11 +12,13 @@ class EntradaCine {
 
     // Método para calcular el precio de la entrada.
     public function calcularPrecio() {
-        if ($this->edad < 12 || $this->esEstudiante == 'si') {
-            return ($this->edad < 12) ? 160 : 180;
-        } else {
-            return 300;
-        }
+        $precio = 300;
+        if ($this->getEdad() < 12 || $this->getEsEstudiante() == 'si') {
+            $precio = ($this->getEdad() < 12) ? 160 : 180;
+        } 
+        
+        return $precio;
+        
     }
 
     // Getters
@@ -24,7 +26,7 @@ class EntradaCine {
         return $this->edad;
     }
 
-    public function esEstudiante() {
+    public function getEsEstudiante() {
         return $this->esEstudiante;
     }
 }
