@@ -1,0 +1,48 @@
+/* Estilos generales */
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #343a40;
+    margin-bottom: 30px;
+}
+
+form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para los mensajes de error */
+.invalid-feedback {
+    display: block;
+    font-size: 0.875em;
+    color: #dc3545;
+}
+
+/* Estilos para los inputs con validación */
+.is-invalid {
+    border-color: #dc3545;
+    padding-right: calc(1.5em + .75rem);
+}
+
+.is-valid {
+    border-color: #198754;
+    padding-right: calc(1.5em + .75rem);
+}
+
+/* Estilos para el botón "Limpiar" */
+.btn-secondary {
+    margin-left: 10px;
+}
+
+.asterisco-rojo {
+    color: #dc3545;
+}
+
+.helper {
+    margin-left: 4px;
+}
