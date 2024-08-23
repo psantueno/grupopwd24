@@ -1,5 +1,5 @@
 <?php
-include_once "../../control/procesar.php";
+include_once "../../controller/procesar.php";
 include_once "../../../utilities/funciones.php";
 
 $datos=submittedData();
@@ -16,6 +16,6 @@ $mensaje= $obj->validarDatos($datos);
 <body>
 
 <h1><?php echo " $mensaje"; ?> </h1>
-<br><a href="../../index.html">Volver al formulario</a>
+<br><a href="../index.php">Volver al formulario</a>
 </body>
 </html>
