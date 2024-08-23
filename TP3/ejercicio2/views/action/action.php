@@ -1,6 +1,6 @@
 <?php
     include_once '../../../utilities/funciones.php';
-    include_once '../../Controlador/Archivo.php';
+    include_once '../../controllers/Archivo.php';
 
     $datos=submittedData();
     $unArchivo=new Archivo();
