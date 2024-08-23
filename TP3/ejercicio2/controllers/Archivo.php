@@ -9,12 +9,12 @@ class Archivo{
         $this->dir="../../Controlador/dir/";
     }
 
-    //Observadores
+    //Getters
     public function getDir(){
         return $this->dir;
     }
 
-    //Propios
+    //Métodos
     public function validar($datos){
         $unArchivo=$datos['archivo'];
         $mensaje="";
