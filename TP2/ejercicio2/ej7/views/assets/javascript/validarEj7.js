@@ -15,8 +15,8 @@ $(document).ready(function () {
                 input.removeClass("is-invalid").addClass("is-valid");
             }
         });
-
-        if (select.val().trim() === "") {
+        
+        if (select.val()==null || select.val().trim() === "") {
             select.addClass("is-invalid").removeClass("is-valid");
             isValid = false;
         } else {

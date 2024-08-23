@@ -5,9 +5,9 @@ class EntradaCine {
     private $esEstudiante;
 
     // Constructor
-    public function __construct($edad, $esEstudiante) {
-        $this->edad = $edad;
-        $this->esEstudiante = $esEstudiante;
+    public function __construct($datos) {
+        $this->edad = $datos['edad'] ?? null;
+        $this->esEstudiante = $datos['estudiante'] ?? null;
     }
 
     // Método para calcular el precio de la entrada.

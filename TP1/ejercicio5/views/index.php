@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>Complete el formulario</h1>
-    <form action="action/mostrar.php" method="post">
+    <form action="action/action.php" method="post">
         <div class="campo">
             <label for="nombre">Nombre</label>
             <input type="text" name="nombre" id="nombre" required>

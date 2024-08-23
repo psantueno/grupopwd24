@@ -1,11 +1,11 @@
 <?php
 
-include_once "../../control/vernumero.php";
+include_once "../../controllers/VerNumero.php";
 include_once "../../../utilities/funciones.php";
 
 
 $datos=submittedData();
-        $obj =new vernumero();
+        $obj =new VerNumero();
        $mensaje= $obj->devolverSigno($datos);
 
 ?>
@@ -19,7 +19,7 @@ $datos=submittedData();
 <body>
     <h1>Número Ingresado</h1>
     <p><?php echo "el numero ingresado es: ". $mensaje; ?></p>
-    <a href="../../ejercicio1.html">Volver</a>
+    <a href="../index.php">Volver</a>
    
 </body>
 </html>

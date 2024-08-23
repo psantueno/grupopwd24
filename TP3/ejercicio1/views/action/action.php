@@ -2,7 +2,7 @@
 include_once '../../../utilities/funciones.php';
 include_once '../../controllers/Archivo.php';
 
-$datos = $_FILES;
+$datos = submittedData();
 $unArchivo = new Archivo();
 
 if (isset($datos['archivo'])) {
@@ -30,7 +30,7 @@ if (isset($datos['archivo'])) {
             <?php echo $contenido; ?>
         </div>
         <div class="mt-4">
-            <a class="btn btn-secondary" href="../index.html">Volver</a>
+            <a class="btn btn-secondary" href="../index.php">Volver</a>
         </div>
     </div>
 
