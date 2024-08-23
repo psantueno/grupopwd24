@@ -14,30 +14,23 @@
 
     <div class="alert alert-primary" role="alert">
         <?php
-        function submittedData() {
-            $datos = array();
-            foreach ($_GET as $clave => $valor) {
-                $datos[$clave] = $valor;
-            }
-            foreach ($_POST as $clave => $valor) {
-                $datos[$clave] = $valor;
-            }
-            return $datos;
-        }
+
+        include_once '../../controllers/EntradaCine.php';
+        include_once '../../../utilities/funciones.php';
 
         $datos = submittedData();
+
         $edad = $datos['edad'] ?? null;
         $estudiante = $datos['estudiante'] ?? null;
 
-        $precio = 300; // Precio por defecto
 
         if (is_numeric($edad) && $edad >= 0 && $estudiante !== null) {
-            if ($edad < 12 || $estudiante == 'si') {
-                $precio = ($edad < 12) ? 160 : 180;
-            }
+            $esEstudiante = ($estudiante == 'si');
+            $entradaCine = new EntradaCine($edad, $estudiante);
+            $precio = $entradaCine->calcularPrecio($edad, $esEstudiante);
 
             echo "<p><strong>Edad:</strong> $edad</p>";
-            echo "<p><strong>Estudiante:</strong> " . ($estudiante == 'si' ? 'Sí' : 'No') . "</p>";
+            echo "<p><strong>Estudiante:</strong> " . ($esEstudiante ? 'Sí' : 'No') . "</p>";
             echo "<p><strong>Precio de la entrada:</strong> \$$precio</p>";
         } else {
             echo "<p class='text-danger'>Por favor, complete todos los campos con valores válidos.</p>";

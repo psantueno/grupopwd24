@@ -1,5 +1,5 @@
 <?php
-    include_once '../../Controlador/Persona.php';
+    include_once '../../controllers/Persona.php.php';
     include_once '../../../utilities/funciones.php';
 
     //Obtengo los datos enviados en el formulario, sea por el metodo get o por el metodo post
