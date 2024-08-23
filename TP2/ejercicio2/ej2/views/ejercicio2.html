@@ -5,21 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./views/assets/css/style.css">
     <title>Formulario de Horas de Cursada</title>
-    <script>
-        function validarFormulario() {
-            let valid = true;
-            const inputs = document.querySelectorAll('input[type="number"]');
-
-            inputs.forEach(input => {
-                if (input.value === '' || parseFloat(input.value) < 0) {
-                    valid = false;
-                    alert("Por favor, ingrese un número válido (positivo) en todos los campos.");
-                }
-            });
-
-            return valid;
-        }
-    </script>
 </head>
 <body>
     <h1>Horas de Cursada por Semana</h1>
@@ -47,5 +32,8 @@
         <br><br>
         <input type="submit" name="submit" value="Enviar">
     </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./assets/javascript/validarEj2.js"></script>
 </body>
 </html>

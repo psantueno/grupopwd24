@@ -1,29 +1,26 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const form = document.querySelector("form");
-    const inputs = form.querySelectorAll("input[type='number']");
-    const select = form.querySelector("select");
+$(document).ready(function () {
+    const form = $("form");
+    const inputs = form.find("input[type='number']");
+    const select = form.find("select");
 
-    form.addEventListener("submit", function (event) {
+    form.on("submit", function (event) {
         let isValid = true;
 
-        inputs.forEach(function (input) {
-            if (input.value.trim() === "" || isNaN(input.value)) {
-                input.classList.add("is-invalid");
-                input.classList.remove("is-valid");
+        inputs.each(function () {
+            const input = $(this);
+            if (input.val().trim() === "" || isNaN(input.val())) {
+                input.addClass("is-invalid").removeClass("is-valid");
                 isValid = false;
             } else {
-                input.classList.remove("is-invalid");
-                input.classList.add("is-valid");
+                input.removeClass("is-invalid").addClass("is-valid");
             }
         });
 
-        if (select.value.trim() === "") {
-            select.classList.add("is-invalid");
-            select.classList.remove("is-valid");
+        if (select.val().trim() === "") {
+            select.addClass("is-invalid").removeClass("is-valid");
             isValid = false;
         } else {
-            select.classList.remove("is-invalid");
-            select.classList.add("is-valid");
+            select.removeClass("is-invalid").addClass("is-valid");
         }
 
         if (!isValid) {
