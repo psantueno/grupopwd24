@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/estilosTp1Ej6.css">
-    <script src="javascript/validarEj6.js"></script>
+    <script src="./assets/javascript/validarEj6.js"></script>
     <title>Home</title>
 </head>
 <body>
