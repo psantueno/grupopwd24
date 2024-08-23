@@ -53,13 +53,13 @@ document.addEventListener("submit", e=>{
 })
 
 function soloCaracteres(unaCadena){
-    let reg=/^(?!.*\s\s)[a-zA-Z\s]+$/;  //Expresion regular que ppermite letras y espacios, pero no se puede empezar ni terminar con espacios y no pueden haber espacios consecutivos en la cadena
+    let reg=/^(?!.*\s\s)[a-zA-Z\s]+$/;  //Expresion regular que permite letras y espacios, pero no pueden haber espacios consecutivos en la cadena
     let valido=reg.test(unaCadena);
     return valido;
 }
 
 function direccionValida(unaCadena){
-    let reg=/^(?!\.)(?!.*\s\s)(?!.*\.\.)[a-zA-Z0-9.\s]+$/; //Expresion regular que ppermite letras,numeros y espacios, pero no se puede empezar ni terminar con espacios, no pueden haber espacios consecutivos en la cadena y no puede empesar con puntos
+    let reg=/^(?!\.)(?!.*\s\s)(?!.*\.\.)[a-zA-Z0-9.\s]+$/; //Expresion regular que permite letras,numeros y espacios, pero no puede empezar con un punto y no puede haber espacios consecutivos
     let valido=reg.test(unaCadena);
     return valido;
 }

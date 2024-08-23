@@ -13,7 +13,7 @@
             $direccion=trim($data['direccion']);
             $estudios=$data['estudios'];
             $genero=$data['genero'];
-            $mensaje= "Hola soy $apellido, $nombre tengo $edad años, soy $genero, vivo en $direccion y tengo $estudios";
+            $mensaje= "Hola soy $apellido $nombre, tengo $edad años, soy $genero, vivo en $direccion y tengo $estudios";
             return $mensaje;
         }
         

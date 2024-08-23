@@ -1,20 +1,15 @@
 <?php
-    include_once '../../controllers/Persona.php.php';
+    include_once '../../controllers/Persona.php';
     include_once '../../../utilities/funciones.php';
 
-    //Obtengo los datos enviados en el formulario, sea por el metodo get o por el metodo post
     $datos=submittedData();
 
-    //Creo una instancia de Persona
     $unaPersona=new Persona();
 
-    //Obtengo el mensaje del saludo
     $saludo=$unaPersona->obtenerSaludo($datos);
 
-    //Verifico si es mayor de edad o no
     $esMayor=$unaPersona->esMayorEdad($datos);
 
-    //Obtengo el mansaje de los deportes que practica
     $mensajeDeportes=$unaPersona->obtenerMensajeDeportes($datos);
 ?>
 

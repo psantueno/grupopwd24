@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/estilosTp1Ej4.css">
-    <script src="./assets/javascript/validarEj4.js"></script>
+    <script src="assets/javascript/validarEj4.js"></script>
     <title>Home</title>
 </head>
 <body>
+    <h1>Complete el formulario</h1>
     <form action="action/mostrar.php" method="post">
         <div class="campo">
             <label for="nombre">Nombre</label>
