@@ -1,5 +1,5 @@
 <?php
-include_once "../../control/procesar.php";
+include_once "../../controller/procesar.php";
 include_once "../../../utilities/funciones.php";
 
 $datos=submittedData();

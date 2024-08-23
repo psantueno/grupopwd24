@@ -1,7 +1,7 @@
 <?php
 
-include_once "../../control/procesarPelicula.php";
-include_once "../../util/funciones.php";
+include_once "../controller/procesarPelicula.php";
+include_once "../../utilities/funciones.php";
 
 $datos=submittedData();
         $obj =new procesarPelicula();

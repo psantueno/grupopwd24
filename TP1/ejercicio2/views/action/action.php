@@ -1,5 +1,5 @@
 <?php
-include_once "../../control/formulario.php";
+include_once "../../controllers/formulario.php";
 include_once "../../../utilities/funciones.php";
 
 $datos=submittedData();

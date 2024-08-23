@@ -1,6 +1,6 @@
 <?php
 
-include_once "../../control/vernumero.php";
+include_once "../../controllers/VerNumero.php";
 include_once "../../../utilities/funciones.php";
 
 
