@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./views/assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Formulario de Información</title>
 
     <script>
@@ -30,7 +30,7 @@
 <body>
     <div class="form-container">
         <h1>Formulario de Información</h1>
-        <form action="./views/action/action.php" method="post" onsubmit="return validarFormulario()">
+        <form action="action/action.php" method="post" onsubmit="return validarFormulario()">
             <label for="nombre">Nombre:</label>
             <input type="text" id="nombre" name="nombre" required>
 

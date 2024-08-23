@@ -9,7 +9,7 @@ document.addEventListener("submit", e=>{
     nombre=document.getElementById("nombre");
     apellido=document.getElementById("apellido");
     direccion=document.getElementById("direccion");
-    if(soloCaracteres(nombre.value)){
+    if(soloLetras(nombre.value)){
         if(nombre.classList.contains("invalido")){
             nombre.classList.remove("invalido");
         }
@@ -22,7 +22,7 @@ document.addEventListener("submit", e=>{
         valido=false; 
     }
 
-    if(soloCaracteres(apellido.value)){
+    if(soloLetras(apellido.value)){
         if(apellido.classList.contains("invalido")){
             apellido.classList.remove("invalido");
         }
@@ -52,8 +52,8 @@ document.addEventListener("submit", e=>{
     }
 })
 
-function soloCaracteres(unaCadena){
-    let reg=/^(?!.*\s\s)[a-zA-Z\s]+$/;  //Expresion regular que ppermite letras y espacios, pero no pueden haber espacios consecutivos en la cadena
+function soloLetras(unaCadena){
+    let reg=/^(?!.*\s\s)[a-zA-Z\s]+$/;  //Expresion regular que permite letras y espacios, pero no pueden haber espacios consecutivos en la cadena
     let valido=reg.test(unaCadena);
     return valido;
 }

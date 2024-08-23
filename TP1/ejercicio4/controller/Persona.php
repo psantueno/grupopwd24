@@ -11,7 +11,7 @@
             $apellido=trim($data['apellido']);
             $edad=$data['edad'];
             $direccion=trim($data['direccion']);
-            $mensaje= "Hola soy $apellido, $nombre tengo $edad años y vivo en $direccion";
+            $mensaje= "Hola soy $apellido $nombre, tengo $edad años y vivo en $direccion";
             return $mensaje;
         }
         

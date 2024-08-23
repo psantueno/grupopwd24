@@ -22,7 +22,7 @@ $mensajito=$obj->porDias($datos);
 </br>
         <?php echo $mensajito; ?>
         
-<h2><?php echo "Total de horas es de : .$mensaje"; ?> </h2>
-<a href="../../ejercicio2.html">Volver al formulario</a>
+<h2><?php echo "Total de horas es de : $mensaje"; ?> </h2>
+<a href="../ejercicio2.php">Volver al formulario</a>
 </body>
 </html>
