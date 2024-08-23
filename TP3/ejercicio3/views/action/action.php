@@ -1,7 +1,7 @@
 <?php
 
-include_once "../../control/procesarPelicula.php";
-include_once "../../util/funciones.php";
+include_once "../../controller/procesarPelicula.php";
+include_once '../../../utilities/funciones.php';
 
 $datos=submittedData();
         $obj =new procesarPelicula();
@@ -26,7 +26,7 @@ $datos=submittedData();
                 <div class="card-body">
                     <h1 class="card-title">La película introducida es</h1>
                     <p class="card-text"><?php echo " " . $mensaje; ?></p>
-                    <a href="../../formulario.html" class="btn btn-light">Volver</a>
+                    <a href="../formulario.html" class="btn btn-light">Volver</a>
                 </div>
             </div>
         </div>

@@ -6,7 +6,7 @@ class Archivo{
 
     //Constructor
     public function __construct(){
-        $this->dir="../../Controlador/dir/";
+        $this->dir="../../dir/";
     }
 
     //Getters

@@ -1,5 +1,5 @@
 <?php
-include_once "../../control/formulario.php";
+include_once "../../controllers/formulario.php";
 include_once "../../../utilities/funciones.php";
 
 $datos=submittedData();
@@ -24,7 +24,7 @@ $datos=submittedData();
                 <div class="card-body">
                     <h1 class="card-title">La película introducida es</h1>
                     <p class="card-text"><?php echo " " . $mensaje; ?></p>
-                    <a href="../peliculas.html" class="btn btn-light">Volver</a>
+                    <a href="../peliculas.php" class="btn btn-light">Volver</a>
                 </div>
             </div>
         </div>

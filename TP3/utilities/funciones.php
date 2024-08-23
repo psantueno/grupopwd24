@@ -8,5 +8,8 @@ function submittedData(){
     foreach($_POST as $clave=>$valor){
         $datos[$clave]=$valor;
     }
+    foreach($_FILES as $clave=>$valor){
+        $datos[$clave]=$valor;
+    }
     return $datos;
 }
