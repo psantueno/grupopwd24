@@ -39,10 +39,19 @@ form {
     margin-left: 10px;
 }
 
+.btn-primary {
+    text-align: center;
+}
+
 .asterisco-rojo {
     color: #dc3545;
 }
 
 .helper {
     margin-left: 4px;
+    font-size: 0.875em;
+    color: #6c757d;
 }
+
+
+
