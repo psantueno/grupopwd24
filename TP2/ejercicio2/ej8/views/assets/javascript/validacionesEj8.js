@@ -1,40 +1,33 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const form = document.querySelector("form");
-    const edadInput = document.getElementById("edad");
-    const estudianteInput = document.getElementById("estudiante");
-    const resetButton = form.querySelector('button[type="reset"]');
+// Usando JQUERY
 
-    form.addEventListener("submit", function (event) {
+$(document).ready(function () {
+    $('#entradaForm').on('submit', function (e) {
+
         let isValid = true;
 
-        if (edadInput.value.trim() === "" || isNaN(edadInput.value) || edadInput.value <= 0) {
-            edadInput.classList.add("is-invalid");
-            edadInput.classList.remove("is-valid");
+        const edad = $('#edad').val();
+        if (edad === '' || isNaN(edad) || parseInt(edad) <= 0) {
             isValid = false;
+            $('#edad').addClass('is-invalid');
         } else {
-            edadInput.classList.remove("is-invalid");
-            edadInput.classList.add("is-valid");
+            $('#edad').removeClass('is-invalid');
         }
 
-        if (estudianteInput.value === "") {
-            estudianteInput.classList.add("is-invalid");
-            estudianteInput.classList.remove("is-valid");
+    
+        const estudiante = $('#estudiante').val();
+        if (estudiante === null) {
             isValid = false;
+            $('#estudiante').addClass('is-invalid');
         } else {
-            estudianteInput.classList.remove("is-invalid");
-            estudianteInput.classList.add("is-valid");
+            $('#estudiante').removeClass('is-invalid');
         }
 
         if (!isValid) {
-            event.preventDefault();
+            e.preventDefault();
         }
     });
 
-    if (resetButton) {
-        resetButton.addEventListener("click", function () {
-            // Limpiar las clases de validación en todos los inputs
-            edadInput.classList.remove("is-invalid", "is-valid");
-            estudianteInput.classList.remove("is-invalid", "is-valid");
-        });
-    }
+    $('button[type="reset"]').on('click', function () {
+        $('#entradaForm').find('.is-valid, .is-invalid').removeClass('is-valid is-invalid');
+    });
 });
