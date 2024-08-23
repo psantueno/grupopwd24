@@ -1,26 +1,51 @@
 $(document).ready(function () {
-    $("#infoForm").on("submit", function (e) {
-        let valido = true;
-
-        const nombre = $("#nombre").val().trim();
-        const apellido = $("#apellido").val().trim();
-        const edad = $("#edad").val().trim();
-        const direccion = $("#direccion").val().trim();
-
-        // Validación de campos vacíos
-        if (!nombre || !apellido || !edad || !direccion) {
-            alert("Todos los campos deben ser llenados.");
-            valido = false;
+    $("#formulario").validate({
+        rules:{
+            nombre:{
+                required: true,
+                soloLetras: true
+            },
+            apellido:{
+                required: true,
+                soloLetras:true
+            },
+            edad:{
+                required: true,
+                digits: true,
+                min: 1
+            },
+            direccion: {
+                    required: true,
+                    letrasYNumeros: true
+            }
+        },
+        messages:{
+            nombre:{
+                required: "Debe completar este campo"
+            },
+            apellido:{
+                required: "Debe completar este campo"
+            },
+            edad:{
+                required: "Debe completar este campo",
+                digits: "Debe ingresar solo numeros",
+                min: "Debe ingresar numeros mayores a 0"
+            },
+            direccion:{
+                required: "Debe completar este campo"
+            }
         }
-
-        // Validación de la edad
-        if (isNaN(edad) || edad <= 0) {
-            alert("La edad debe ser un número positivo.");
-            valido = false;
-        }
-
-        if (!valido) {
-            e.preventDefault();  // Evita el envío del formulario si hay errores
-        }
-    });
+    })
+    
+    $.validator.addMethod("soloLetras", function(value) {
+        let reg=/^[a-zA-Z]+(?:\s[a-zA-Z]+)*$/;
+        let valido=reg.test(value);
+        return valido;
+    }, "Debe ingresar solo letras");
+    
+    $.validator.addMethod("letrasYNumeros", function(value) {
+        let reg=/^(?!.*\.\.)(?!.*\s\s)[a-zA-Z0-9. ]*$/;
+        let valido=reg.test(value);
+        return valido;
+    }, "Debe ingresar letras o numeros");
 });

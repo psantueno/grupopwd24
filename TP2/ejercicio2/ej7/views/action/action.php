@@ -20,20 +20,16 @@
 
         $datos = submittedData();
 
-        $numero1 = $datos['numero1'] ?? null;
-        $numero2 = $datos['numero2'] ?? null;
-        $operacion = $datos['operacion'] ?? null;
-
         $unCalculo = new Calculadora();
 
-        $resultado = $unCalculo->calcular($numero1, $numero2, $operacion);
+        $resultado = $unCalculo->calcular($datos);
 
         if (isset($resultado['error'])) {
             echo "<p class='text-danger'>{$resultado['error']}</p>";
         } else {
-            $operador = $resultado['operador'];
+            $mensajeOperacion=$unCalculo->mensajeOperacion($datos);
             $valorResultado = $resultado['resultado'];
-            echo "<p><strong>Operación seleccionada:</strong> $numero1 $operador $numero2</p>";
+            echo "<p><strong>Operación seleccionada:</strong> $mensajeOperacion</p>";
             echo "<p><strong>Resultado:</strong> $valorResultado</p>";
         }
 

@@ -26,7 +26,7 @@ $datos=submittedData();
                 <div class="card-body">
                     <h1 class="card-title">La película introducida es</h1>
                     <p class="card-text"><?php echo " " . $mensaje; ?></p>
-                    <a href="../formulario.html" class="btn btn-light">Volver</a>
+                    <a href="../index.php" class="btn btn-light">Volver</a>
                 </div>
             </div>
         </div>

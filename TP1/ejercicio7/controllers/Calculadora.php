@@ -4,8 +4,11 @@ class Calculadora
 {
 
     // Métodos
-    public function calcular($numero1, $numero2, $operacion)
+    public function calcular($datos)
     {
+        $numero1=$datos['numero1'];
+        $numero2=$datos['numero2'];
+        $operacion=$datos['operacion'];
         $resultado = null;
         $operador = '';
 
@@ -35,5 +38,28 @@ class Calculadora
         }
 
         return ['resultado' => $resultado, 'operador' => $operador];
+    }
+
+    public function mensajeOperacion($datos){
+        $numero1=$datos['numero1'];
+        $numero2=$datos['numero2'];
+        $operacion=$datos['operacion'];
+        $operador = '';
+        switch ($operacion) {
+            case 'suma':
+                $operador = '+';
+                break;
+            case 'resta':
+                $operador = '-';
+                break;
+            case 'multiplicacion':
+                $operador = '*';
+                break;
+            case 'division':
+                $operador = '/';
+                break;
+        }
+        $mensaje= $numero1." ".$operador." ".$numero2;
+        return $mensaje;
     }
 }

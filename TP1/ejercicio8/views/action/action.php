@@ -19,15 +19,13 @@
         include_once '../../../utilities/funciones.php';
 
         $datos = submittedData();
+        $unaEntrada = new EntradaCine($datos);
+        $edad=$unaEntrada->getEdad();
+        $esEstudiante=$unaEntrada->getEsEstudiante();
 
-        $edad = $datos['edad'] ?? null;
-        $estudiante = $datos['estudiante'] ?? null;
-
-
-        if (is_numeric($edad) && $edad >= 0 && $estudiante !== null) {
-            $esEstudiante = ($estudiante == 'si');
-            $entradaCine = new EntradaCine($edad, $estudiante);
-            $precio = $entradaCine->calcularPrecio($edad, $esEstudiante);
+        if (is_numeric($edad) && $edad >= 0 && $esEstudiante !== null) {
+            $esEstudiante = ($esEstudiante == 'si');
+            $precio = $unaEntrada->calcularPrecio();
 
             echo "<p><strong>Edad:</strong> $edad</p>";
             echo "<p><strong>Estudiante:</strong> " . ($esEstudiante ? 'Sí' : 'No') . "</p>";

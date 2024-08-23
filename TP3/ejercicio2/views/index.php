@@ -12,7 +12,7 @@
         <div class="row titulo">
             <h1>Ingrese un archivo(.txt)</h1>
         </div>
-        <form action="action/action.php" method="post" enctype="multipart/form-data">
+        <form action="action/action.php" method="post" enctype="multipart/form-data" id="formulario">
             <div class="file-field input-field row titulo">
                 <div class="btn-small blue col m2 offset-m1">
                     <span>Archivo</span>

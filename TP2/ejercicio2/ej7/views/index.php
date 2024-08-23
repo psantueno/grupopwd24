@@ -10,21 +10,21 @@
 <body class="container mt-5">
     <h1 class="text-center">Calculadora Simple</h1>
 
-    <form action="./action/procesar.php" method="post" class="form-floating">
+    <form action="action/action.php" method="post" class="form-floating">
         <div class="form-floating mb-3">
-            <input class="form-control" type="number" id="numero1" name="numero1" placeholder="Ingrese el primer número" required>
+            <input class="form-control" type="number" id="numero1" name="numero1" placeholder="Ingrese el primer número">
             <label for="numero1">Número 1</label>
             <div class="invalid-feedback">Por favor, ingrese un número válido.</div>
         </div>
 
         <div class="form-floating mb-3">
-            <input class="form-control" type="number" id="numero2" name="numero2" placeholder="Ingrese el segundo número" required>
+            <input class="form-control" type="number" id="numero2" name="numero2" placeholder="Ingrese el segundo número">
             <label for="numero2">Número 2</label>
             <div class="invalid-feedback">Por favor, ingrese un número válido.</div>
         </div>
 
         <div class="form-floating mb-4">
-            <select class="form-select" id="operacion" name="operacion" required>
+            <select class="form-select" id="operacion" name="operacion">
                 <option value="" selected disabled>- Seleccionar -</option>
                 <option value="suma">Suma</option>
                 <option value="resta">Resta</option>
@@ -40,7 +40,10 @@
         </div>
     </form>
     
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="assets/javascript/validacionesEj7.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/additional-methods.min.js"></script>
+    <script src="assets/javascript/validarEj7.js" defer></script>
 </body>
 </html>

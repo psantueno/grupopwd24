@@ -11,7 +11,7 @@
 <body class="container mt-5">
     <h1 class="text-center">Calculadora Simple</h1>
 
-    <form action="./action/procesar.php" method="post" class="form-floating">
+    <form action="action/action.php" method="post" class="form-floating">
         <div class="form-floating mb-3">
             <input class="form-control" type="number" id="numero1" name="numero1" placeholder="Ingrese el primer número" required>
             <label for="numero1">Número 1</label>

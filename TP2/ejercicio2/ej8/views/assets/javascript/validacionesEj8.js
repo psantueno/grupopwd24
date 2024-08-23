@@ -1,33 +1,40 @@
-// Usando JQUERY
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector("form");
+    const edadInput = document.getElementById("edad");
+    const estudianteInput = document.getElementById("estudiante");
+    const resetButton = form.querySelector('button[type="reset"]');
 
-$(document).ready(function () {
-    $('#entradaForm').on('submit', function (e) {
-
+    form.addEventListener("submit", function (event) {
         let isValid = true;
 
-        const edad = $('#edad').val();
-        if (edad === '' || isNaN(edad) || parseInt(edad) <= 0) {
+        if (edadInput.value.trim() === "" || isNaN(edadInput.value) || edadInput.value <= 0) {
+            edadInput.classList.add("is-invalid");
+            edadInput.classList.remove("is-valid");
             isValid = false;
-            $('#edad').addClass('is-invalid');
         } else {
-            $('#edad').removeClass('is-invalid');
+            edadInput.classList.remove("is-invalid");
+            edadInput.classList.add("is-valid");
         }
 
-    
-        const estudiante = $('#estudiante').val();
-        if (estudiante === null) {
+        if (estudianteInput.value === "") {
+            estudianteInput.classList.add("is-invalid");
+            estudianteInput.classList.remove("is-valid");
             isValid = false;
-            $('#estudiante').addClass('is-invalid');
         } else {
-            $('#estudiante').removeClass('is-invalid');
+            estudianteInput.classList.remove("is-invalid");
+            estudianteInput.classList.add("is-valid");
         }
 
         if (!isValid) {
-            e.preventDefault();
+            event.preventDefault();
         }
     });
 
-    $('button[type="reset"]').on('click', function () {
-        $('#entradaForm').find('.is-valid, .is-invalid').removeClass('is-valid is-invalid');
-    });
+    if (resetButton) {
+        resetButton.addEventListener("click", function () {
+            // Limpiar las clases de validación en todos los inputs
+            edadInput.classList.remove("is-invalid", "is-valid");
+            estudianteInput.classList.remove("is-invalid", "is-valid");
+        });
+    }
 });

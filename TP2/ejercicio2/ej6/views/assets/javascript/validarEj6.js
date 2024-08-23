@@ -1,49 +1,64 @@
 $(document).ready(function () {
-    $("form").on("submit", function (e) {
-        let nombre = $("#nombre");
-        let apellido = $("#apellido");
-        let direccion = $("#direccion");
-        let valido = true;
-
-        if (soloCaracteres(nombre.val())) {
-            nombre.removeClass("invalido");
-            $("#nombreError").hide();
-        } else {
-            nombre.addClass("invalido");
-            $("#nombreError").show();
-            valido = false;
+    $("#formulario").validate({
+        rules:{
+            nombre:{
+                required: true,
+                soloLetras: true
+            },
+            apellido:{
+                required: true,
+                soloLetras: true
+            },
+            edad:{
+                required: true,
+                digits: true,
+                min: 1
+            },
+            direccion:{
+                required: true,
+                letrasYNumeros: true
+            },
+            genero:{
+                required: true,
+                soloLetras: true
+            },
+            estudios:{
+                required: true
+            }
+        },
+        messages:{
+            nombre:{
+                required:"Debe completar este campo"
+            },
+            apellido:{
+                required:"Debe completar este campo"
+            },
+            edad:{
+                required:"Debe completar este campo",
+                digits: "Debe ingresar solo numeros",
+                min: "Debe ingresar numeros mayores a 0"
+            },
+            direccion:{
+                required:"Debe completar este campo",
+            },
+            genero:{
+                required:"Debe completar este campo"
+            },
+            estudios:{
+                required:"Debe completar este campo"
+            }
         }
-
-        if (soloCaracteres(apellido.val())) {
-            apellido.removeClass("invalido");
-            $("#apellidoError").hide();
-        } else {
-            apellido.addClass("invalido");
-            $("#apellidoError").show();
-            valido = false;
-        }
-
-        if (direccionValida(direccion.val())) {
-            direccion.removeClass("invalido");
-            $("#direccionError").hide();
-        } else {
-            direccion.addClass("invalido");
-            $("#direccionError").show();
-            valido = false;
-        }
-
-        if (!valido) {
-            e.preventDefault();
-        }
-    });
-
-    function soloCaracteres(unaCadena) {
-        let reg = /^(?!.*\s\s)[a-zA-Z\s]+$/;  // Permite letras y espacios, pero no espacios consecutivos
-        return reg.test(unaCadena);
-    }
-
-    function direccionValida(unaCadena) {
-        let reg = /^(?!.*\s\s)(?!.*\.\.)[a-zA-Z0-9.\s]+$/; // Permite letras, números, espacios y puntos, pero no consecutivos
-        return reg.test(unaCadena);
-    }
+    })
+    
+    $.validator.addMethod("soloLetras", function(value) {
+        let reg=/^[a-zA-Z]+(?:\s[a-zA-Z]+)*$/;
+        let valido=reg.test(value);
+        return valido;
+    }, "Debe ingresar solo letras");
+    
+    $.validator.addMethod("letrasYNumeros", function(value) {
+        let reg=/^(?!.*\.\.)(?!.*\s\s)[a-zA-Z0-9. ]*$/;
+        let valido=reg.test(value);
+        return valido;
+    }, "Debe ingresar letras o numeros");
 });

@@ -29,7 +29,7 @@
             if($esMayor){
                 echo "<p>Soy mayor de edad</p>";
             }else{
-                echo "<p>Soy mayor de edad</p>";
+                echo "<p>Soy menor de edad</p>";
             }
             echo "<p>$mensajeDeportes<p>";
         ?>

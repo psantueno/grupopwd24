@@ -1,11 +1,10 @@
 <?php
 class procesarPelicula{
     function cargar($peli){
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $titulo = htmlspecialchars($_POST['titulo']);
-    $genero = htmlspecialchars($_POST['genero']);
-    $anio = htmlspecialchars($_POST['anio']);
-    $duracion = htmlspecialchars($_POST['duracion']);
+    $titulo=$peli['titulo'];
+    $genero=$peli['genero'];
+    $anio=$peli['anio'];
+    $duracion=$peli['duracion'];
 
     // Validación y almacenamiento de la imagen
     $imagen = $_FILES['imagen'];
@@ -45,8 +44,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         } 
 
     }
-
-}
 return $mensaje;
 }
     }

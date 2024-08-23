@@ -13,7 +13,7 @@
     <h1 class="text-center">CINEM@S</h1>
     <h2 class="text-left">Calcular entrada</h2>
 
-    <form class="form-floating" action="action/procesar.php" method="post" id="entradaForm">
+    <form class="form-floating" action="action/action.php" method="post" id="entradaForm">
         <div class="form-floating mb-3">
             <input class="form-control" min="1" type="number" id="edad" name="edad" placeholder="Ingrese su edad" aria-label="default input example">
             <label for="edad">Edad</label>
@@ -42,8 +42,9 @@
 
     </form>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="./assets/javascript/validacionesEj8.js"></script>
 </body>
 

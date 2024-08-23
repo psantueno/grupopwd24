@@ -19,7 +19,7 @@ $datos=submittedData();
 <body>
     <h1>Número Ingresado</h1>
     <p><?php echo "el numero ingresado es: ". $mensaje; ?></p>
-    <a href="../ejercicio1.php">Volver</a>
+    <a href="../index.php">Volver</a>
    
 </body>
 </html>
